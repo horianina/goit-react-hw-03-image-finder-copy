@@ -7,8 +7,10 @@ const ImageGallery = ({ articles }) => {
   return (
     <ImageGalleryContainer>
       <ul className="ImageGallery">
-        {articles.length > 0 ? <ImageGalleryItem articles={articles} /> : null}
-        {/* <ImageGalleryItem /> */}
+        {articles.length > 0 &&
+          articles.map((article) => (
+            <ImageGalleryItem key={article.id} {...article} />
+          ))}
       </ul>
     </ImageGalleryContainer>
   );
